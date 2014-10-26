@@ -35,6 +35,10 @@
 		function memrecall() {
 			document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
 		}
+		function clearcalc() {
+			document.getElementById('input').innerHTML="";
+			document.getElementById('result').innerHTML="";
+		}
 		</script>
 	</head>
 	<body>
@@ -92,7 +96,7 @@
 					<!-- Extra Operations-->
 					<table class="extra-operations">
 						<tr>
-							<td><button>CLEAR</button></td>
+							<td><button OnClick="clearcalc()">CLEAR</button></td>
 						</tr>
 						<tr>
 							<td><button>(</button></td>
