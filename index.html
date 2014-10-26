@@ -23,7 +23,17 @@
 			var temp=document.getElementById('input').innerHTML;
 			document.getElementById('input').innerHTML=eval(document.getElementById('input').innerHTML);
 			document.getElementById('result').innerHTML=temp+'='+document.getElementById('input').innerHTML;
+			document.getElementById('history').innerHTML+=temp+'='+document.getElementById('input').innerHTML+"<br>";
 
+		}
+		function memclear() {
+			document.getElementById('memory').innerHTML="clear";
+		}
+		function memstore() {
+			document.getElementById('memory').innerHTML=document.getElementById('input').innerHTML;
+		}
+		function memrecall() {
+			document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
 		}
 		</script>
 	</head>
@@ -102,12 +112,12 @@
 					</table>
 					<table class="extra-operations">
 						<tr>
-							<td><button>MC</button></td>
+							<td><button OnClick="memclear()">MC</button></td>
 						<tr>
-							<td><button>MS</button></td>		
+							<td><button OnClick="memstore()">MS</button></td>		
 						</tr>
 						<tr>
-							<td><button>MR</button></td>
+							<td><button OnClick="memrecall()">MR</button></td>
 						</tr>
 						<tr>
 							<td><button>M+</button></td>
@@ -127,8 +137,10 @@
 			</header>
 			<!-- HISTORY -->
 			<article>
+				<h6>Memory</h6>
+				<p id="memory"></p>
 				<h4>HISTORY</h4>
-				<p>
+				<p id="history">
 					
 				</p>
 			</article>
