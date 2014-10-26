@@ -5,31 +5,15 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
 		<script type="text/javascript">
-		function input(val){
-			document.getElementById('input').innerHTML+=val;
-
-		}
-		function del() {
-			var temp=document.getElementById('input').innerHTML;
-			temp=temp.substring(0,temp.length-1);
-			document.getElementById('input').innerHTML=temp;
-		}
-		function divide() {
-			var temp=document.getElementById('input').innerHTML;
-			temp=temp;
-			document.getElementById('input').innerHTML=temp;
-		}
-		function evalinput() {
-			var temp=document.getElementById('input').innerHTML;
-			document.getElementById('input').innerHTML=eval(document.getElementById('input').innerHTML);
-			document.getElementById('result').innerHTML=temp+'='+document.getElementById('input').innerHTML;
-
+		for(var i =0; i<numpad.length; i++){
+			numpad[i].onclick=input.value+=numpad[i].innerHTML;
 		}
 		</script>
 	</head>
 	<body>
 		<header class="top-bar">
-			<p id="input">
+			<p>
+				<INPUT type="text" id="input" value=text>Hello
 			</p>
 		</header>
 
@@ -39,43 +23,43 @@
 				<tr>
 					<table id="numpad" class="numpad">
 						<tr>
-							<td><button OnClick="input('7')">7</button></td>
-							<td><button OnClick="input('8')">8</button></td>
-							<td><button OnClick="input('9')">9</button></td>
+							<td><button>7</button></td>
+							<td><button>8</button></td>
+							<td><button>9</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('4')">4</button></td>
-							<td><button OnClick="input('5')">5</button></td>
-							<td><button OnClick="input('6')">6</button></td>
+							<td><button>4</button></td>
+							<td><button>5</button></td>
+							<td><button>6</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('1')">1</button></td>
-							<td><button OnClick="input('2')">2</button></td>
-							<td><button OnClick="input('3')">3</button></td>
+							<td><button>1</button></td>
+							<td><button>2</button></td>
+							<td><button>3</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('.')">.</button></td>
-							<td><button OnClick="input('0')">0</button></td>
-							<td><button OnClick="evalinput()">=</button></td>
+							<td><button>.</button></td>
+							<td><button>0</button></td>
+							<td><button>=</button></td>
 						</tr>
 					</table>
 
 					<!-- Basic Operations-->
 					<table class="basic-operations">
 						<tr>
-							<td><button OnClick="del();">DEL</button></td>
+							<td><button>DEL</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('/')">/</button></td>
+							<td><button>/</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('*')">x</button></td>
+							<td><button>x</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('-')">-</button></td>
+							<td><button>-</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('+')">+</button></td>
+							<td><button>+</button></td>
 						</tr>
 					</table>
 
@@ -121,7 +105,7 @@
 			<!-- THE RESULT -->
 			<header>
 				<h3>RESULT</h3>
-				<p id="result">
+				<p>
 
 				</p>
 			</header>
