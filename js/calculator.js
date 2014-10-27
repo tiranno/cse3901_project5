@@ -1,3 +1,40 @@
+var counter=0;
+function input(val){
+	document.getElementById('input').innerHTML+=val;
+
+}
+function del() {
+	var temp=document.getElementById('input').innerHTML;
+	temp=temp.substring(0,temp.length-1);
+	document.getElementById('input').innerHTML=temp;
+}
+function divide() {
+	var temp=document.getElementById('input').innerHTML;
+	temp=temp;
+	document.getElementById('input').innerHTML=temp;
+}
+function evalinput() {
+	var temp=document.getElementById('input').innerHTML;
+	document.getElementById('input').innerHTML=eval(document.getElementById('input').innerHTML);
+	document.getElementById('result').innerHTML=temp+'='+document.getElementById('input').innerHTML;
+	document.getElementById('history').innerHTML+="<div id=\"history"+counter+"\">"+temp+'='+document.getElementById('input').innerHTML+"<button OnClick=\"input("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
+	counter+=1;
+
+}
+function memclear() {
+	document.getElementById('memory').innerHTML="clear";
+}
+function memstore() {
+	document.getElementById('memory').innerHTML=document.getElementById('input').innerHTML;
+}
+function memrecall() {
+	document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
+}
+function clearcalc() {
+	document.getElementById('input').innerHTML="";
+	document.getElementById('result').innerHTML="";
+	document.getElementById('history').innerHTML="";
+}
 //storage var
 //length var
 

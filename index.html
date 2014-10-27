@@ -1,45 +1,11 @@
 <!DOCTYPE html>
 	<head>
+		<script type="text/javascript" src="js/calculator.js"></script> 		
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" href="css/main.css">
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
-		<script type="text/javascript">
-		function input(val){
-			document.getElementById('input').innerHTML+=val;
-
-		}
-		function del() {
-			var temp=document.getElementById('input').innerHTML;
-			temp=temp.substring(0,temp.length-1);
-			document.getElementById('input').innerHTML=temp;
-		}
-		function divide() {
-			var temp=document.getElementById('input').innerHTML;
-			temp=temp;
-			document.getElementById('input').innerHTML=temp;
-		}
-		function evalinput() {
-			var temp=document.getElementById('input').innerHTML;
-			document.getElementById('input').innerHTML=eval(document.getElementById('input').innerHTML);
-			document.getElementById('result').innerHTML=temp+'='+document.getElementById('input').innerHTML;
-			document.getElementById('history').innerHTML+=temp+'='+document.getElementById('input').innerHTML+"<br>";
-
-		}
-		function memclear() {
-			document.getElementById('memory').innerHTML="clear";
-		}
-		function memstore() {
-			document.getElementById('memory').innerHTML=document.getElementById('input').innerHTML;
-		}
-		function memrecall() {
-			document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
-		}
-		function clearcalc() {
-			document.getElementById('input').innerHTML="";
-			document.getElementById('result').innerHTML="";
-		}
-		</script>
+		<script type="text/javascript" src="js/calculator.js"></script> 		
 	</head>
 	<body>
 		<header class="top-bar">
