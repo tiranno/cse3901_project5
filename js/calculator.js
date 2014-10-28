@@ -68,6 +68,22 @@ function root_2 (x) {
   
 }
 
+function squared () {
+	var operators = ['+', '-', '*', '/'];
+	var i=0;
+	var lastind=0;
+	var temp=document.getElementById('input').innerHTML;
+	var temparray=[1,2,3];
+	for(i=0;i<operators.length;i++){
+		if(temp.lastIndexOf(operators[i])>0 && temp.lastIndexOf(operators[i])>lastind){
+			lastind=temp.lastIndexOf(operators[i]);
+		}
+	}
+	document.getElementById('result').innerHTML=Math.pow(temp.substring(lastind+1,temp.length),2);
+	temp=temp.substring(0,lastind+1)+Math.pow(temp.substring(lastind+1,temp.length),2);
+	document.getElementById('input').innerHTML=temp;
+	//document.getElementById('result').innerHTML=Math.pow(temp,2);
+}
 function memory_clear () {
   
 }
