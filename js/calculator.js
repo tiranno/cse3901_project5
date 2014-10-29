@@ -30,6 +30,8 @@ function del() {
 	var temp=document.getElementById('input').innerHTML;
 	temp=temp.substring(0,temp.length-1);
 	document.getElementById('input').innerHTML=temp;
+	input[inputCount]="";
+	inputCount--;
 }
 
 function divide() {
@@ -66,7 +68,7 @@ function memrecall() {
 }
 
 function clearcalc() {
-	var hist="CLEAR";
+	var hist="CLEAR<br>";
 	hist += document.getElementById('history').innerHTML;
 	document.getElementById('history').innerHTML=hist;
 	//document.getElementById('history').innerHTML += input.join('');
@@ -149,6 +151,19 @@ function power(exponent){
 // 	document.getElementById('input').innerHTML=temp;
 // 	//document.getElementById('result').innerHTML=Math.pow(temp,2);
 // }
+
+function percent () {
+	var operators = ['+', '-', '*', '/'], tmp = [], tmpNum;
+	if(input[inputCount - 1] == ')'){
+
+	}
+	else{
+		tmpNum = parseInt(input[inputCount])/100;
+		//tmpNum = Math.pow(tmpNum, exponent);
+	}
+	document.getElementById('input').innerHTML += "%";
+	input[inputCount] = tmpNum;
+}
 
 function memory_clear () {
   
