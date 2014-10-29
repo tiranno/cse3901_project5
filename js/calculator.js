@@ -102,16 +102,5 @@ function power(exponent){
 	input[inputCount] = tmpNum;
 }
 
-function percent () {
-	var operators = ['+', '-', '*', '/'], tmp = [], tmpNum;
-	if(input[inputCount - 1] == ')'){
-
-	}
-	else{
-		tmpNum = parseInt(input[inputCount])/100;
-	}
-	document.getElementById('input').innerHTML += "%";
-	input[inputCount] = tmpNum;
-}
 
 
