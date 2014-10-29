@@ -34,6 +34,12 @@ hit ok and you will see the trig function with your input appear in the equation
 once you hit '=' the trig functions will be evaluated and the result 
 will be in radians. Degrees is not an option on our calcualtor. 
 
-Other:
-In case it was of any confusion, the "%" on the calculator is the modulo/remainder
-operator, not a percentage calculator.
+Memory Functions:
+
+MC = Memory Clear
+MS = Memory Store (store value of result in memory)
+MR = Memory Recall (input memory value into input)
+M+ = Memory Plus (add result value to memory value and keep in memory)
+
+Other
+"%" is Modulus Operator not Percentage
