@@ -20,72 +20,74 @@
 				<tr>
 					<table id="numpad" class="numpad">
 						<tr>
-							<td><button OnClick="input('7')">7</button></td>
-							<td><button OnClick="input('8')">8</button></td>
-							<td><button OnClick="input('9')">9</button></td>
+							<td><button onclick="addToInput('7')">7</button></td>
+							<td><button onclick="addToInput('8')">8</button></td>
+							<td><button onclick="addToInput('9')">9</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('4')">4</button></td>
-							<td><button OnClick="input('5')">5</button></td>
-							<td><button OnClick="input('6')">6</button></td>
+							<td><button onclick="addToInput('4')">4</button></td>
+							<td><button onclick="addToInput('5')">5</button></td>
+							<td><button onclick="addToInput('6')">6</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('1')">1</button></td>
-							<td><button OnClick="input('2')">2</button></td>
-							<td><button OnClick="input('3')">3</button></td>
+							<td><button onclick="addToInput('1')">1</button></td>
+							<td><button onclick="addToInput('2')">2</button></td>
+							<td><button onclick="addToInput('3')">3</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('.')">.</button></td>
-							<td><button OnClick="input('0')">0</button></td>
-							<td><button OnClick="evalinput()">=</button></td>
+							<td><button onclick="addToInput('.')">.</button></td>
+							<td><button onclick="addToInput('0')">0</button></td>
+							<td><button onclick="evalinput()">=</button></td>
 						</tr>
 					</table>
 
 					<!-- Basic Operations-->
 					<table class="basic-operations">
 						<tr>
-							<td><button OnClick="del();">DEL</button></td>
+							<td><button onclick="del();">DEL</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('/')">/</button></td>
+							<td><button onclick="addToInput('/')">/</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('*')">x</button></td>
+							<td><button onclick="addToInput('*')">x</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('-')">-</button></td>
+							<td><button onclick="addToInput('-')">-</button></td>
 						</tr>
 						<tr>
-							<td><button OnClick="input('+')">+</button></td>
+							<td><button onclick="addToInput('+')">+</button></td>
 						</tr>
 					</table>
-
+					<div id="power">
+						<p>Exponent Value: </p>
+						<input id="powNum" type="number" text="Exponent"></input>
+						<button onclick="power(0)">OK</button>
+					</div>
 					<!-- Extra Operations-->
 					<table>
 						<tr>
 							<table class="extra-operations">
 								<tr>
-									<td><button class="centered" OnClick="clearcalc()">
+									<td><button class="centered" onclick="clearcalc()">
 									CLEAR</button></td>
-									<td><button OnClick="memclear()">MC</button></td>
+									<td><button onclick="memclear()">MC</button></td>
 								</tr>
 							</table>
 						</tr>
 						<tr>
 							<table class="extra-operations">
 								<tr>
-									<td><button>(</button></td>
-									<td><button>)</button></td>
+									<td><button onclick="addToInput('(')">(</button></td>
+									<td><button onclick="addToInput(')')">)</button></td>
 									<td><button>%</button></td>
-
-									<td><button OnClick="memstore()">MS</button></td>
+									<td><button onclick="memstore()">MS</button></td>
 								</tr>
 								<tr>
-									<td><button OnClick="squared()">x^2</button></td>
-									<td><button>y^n</button></td>
+									<td><button id="power-button" onclick="power(2)">x^2</button></td>
+									<td><button onclick="exponentDisplay()">y^n</button></td>
 									<td><button>√</button></td>
-
-									<td><button OnClick="memrecall()">MR</button></td>
+									<td><button onclick="memrecall()">MR</button></td>
 								</tr>
 								<tr>
 									<td><button>sin</button></td>

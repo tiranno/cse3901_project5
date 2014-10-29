@@ -139,3 +139,10 @@
   aside#table-container table.extra-operations button.centered {
   	width: 368px;
   }
+#power{
+  margin-left: 20px;
+  height: 40px;
+  display: none;
+  z-index: 999;
+  margin-bottom: 20px;
+}
