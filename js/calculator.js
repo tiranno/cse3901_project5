@@ -53,19 +53,22 @@ function memclear() {
 }
 
 function memstore() {
-	document.getElementById('memory').innerHTML=document.getElementById('input').innerHTML;
+	document.getElementById('memory').innerHTML = document.getElementById('input').innerHTML;
 }
 
 function memrecall() {
 	document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
+	input[inputCount] = document.getElementById('input').innerHTML;
 }
 
 function clearcalc() {
-	input.length = 0;
-	document.getElementById('history').innerHTML = document.getElementById('input').innerHTML;
+	document.getElementById('history').innerHTML += input.join('');
+	document.getElementById('history').innerHTML += '<br>';
 	document.getElementById('input').innerHTML="";
 	document.getElementById('result').innerHTML="";
 	document.getElementById('power').style.display = "none";
+	input.length = 0;
+	inputCount = 0;
 }
 
 //storage var
