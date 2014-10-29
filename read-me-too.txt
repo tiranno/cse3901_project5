@@ -1,5 +1,0 @@
-hello, if your reading htis. im just creating a
-random shit emacs file to get refresed with emacs again
-and see if i can dump in in the repo
-
-jake

@@ -29,7 +29,7 @@ function del() {
 	var temp=document.getElementById('input').innerHTML;
 	temp=temp.substring(0,temp.length-1);
 	document.getElementById('input').innerHTML=temp;
-	input[inputCount]="";
+	input[inputCount]='';
 	inputCount--;
 }
 
