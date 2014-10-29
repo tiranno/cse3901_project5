@@ -27,17 +27,12 @@ function addToInput(val){
 	document.getElementById('input').innerHTML += val;
 }
 
+// Deletes last operator or value. Examples: Input: 5*3456 Del -> Input: 5* , Input 5* Del -> Input: 5
 function del() {
 	input[inputCount]='';
 	inputCount--;
 	document.getElementById('input').innerHTML=input.join('');
 
-}
-
-function divide() {
-	var temp=document.getElementById('input').innerHTML;
-	temp=temp;
-	document.getElementById('input').innerHTML=temp;
 }
 
 function evalinput() {
@@ -53,14 +48,17 @@ function evalinput() {
 	document.getElementById('history').innerHTML=hist;
 }
 
+//clears memory
 function memclear() {
 	document.getElementById('memory').innerHTML="clear";
 }
 
+//stores result value as memory
 function memstore() {
 	document.getElementById('memory').innerHTML = document.getElementById('result').innerHTML.substring(3,document.getElementById('result').innerHTML.length);
 }
 
+//inputs memory value into input
 function memrecall() {
 	if(input[inputCount] != null){
 		input[inputCount] += document.getElementById('memory').innerHTML;
@@ -71,10 +69,12 @@ function memrecall() {
 	document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
 }
 
+//adds result value to memory value
 function memplus() {
 	document.getElementById('memory').innerHTML=eval(document.getElementById('result').innerHTML.substring(3,document.getElementById('result').innerHTML.length)+"+"+document.getElementById('memory').innerHTML);
 }
 
+//clears input and result but does not clear memory or history
 function clearcalc() {
 	var hist="CLEAR<br>";
 	hist += document.getElementById('history').innerHTML;
