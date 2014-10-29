@@ -49,7 +49,7 @@ function evalinput() {
 	// document.getElementById('input').innerHTML=eval(document.getElementById('input').innerHTML);
 	// document.getElementById('result').innerHTML=temp+'='+document.getElementById('input').innerHTML;
 	// document.getElementById('history').innerHTML+="<div id=\"history"+counter+"\">"+tmp+'='+document.getElementById('input').innerHTML+"<button OnClick=\"addToInput("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
-	// counter+=1;
+	counter+=1;
 }
 
 function memclear() {
@@ -66,7 +66,7 @@ function memrecall() {
 }
 
 function clearcalc() {
-	var hist = "<div id=\"history"+counter+"\">"+tmp+'='+document.getElementById('input').innerHTML+"<button OnClick=\"addToInput("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
+	var hist="CLEAR";
 	hist += document.getElementById('history').innerHTML;
 	document.getElementById('history').innerHTML=hist;
 	//document.getElementById('history').innerHTML += input.join('');
