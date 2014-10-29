@@ -1,4 +1,6 @@
 var inputCount = 0;
+var histcounter = 0;
+var histlast=0;
 var operators = ['+', '-', '*', '/', '(', ')'], input = [];
 
 Array.prototype.contains = function ( tmp ) {
@@ -44,6 +46,11 @@ function evalinput() {
 	document.getElementById('result').innerHTML = ' = ' + eval(tmp);
 	var hist = tmp+document.getElementById('result').innerHTML+"<button OnClick=\"addToInput("+tmp+")\">INPUT</button><br>";
 	hist += document.getElementById('history').innerHTML;
+	histcounter++;
+	if (histcounter>6){
+		histlast= hist.lastIndexOf('<br>');
+		hist=hist.substring(0,histlast);
+	}
 	document.getElementById('history').innerHTML=hist;
 }
 
@@ -72,6 +79,11 @@ function memplus() {
 function clearcalc() {
 	var hist="CLEAR<br>";
 	hist += document.getElementById('history').innerHTML;
+	histcounter++;
+	if (histcounter>6){
+		histlast= hist.lastIndexOf('<br>');
+		hist=hist.substring(0,histlast);
+	}
 	document.getElementById('history').innerHTML=hist;
 	document.getElementById('input').innerHTML="";
 	document.getElementById('result').innerHTML="";
