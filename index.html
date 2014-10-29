@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+	<head>
+		<script type="text/javascript" src="js/calculator.js"></script> 		
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/main.css">
+		<link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/calculator.js"></script> 		
+	</head>
+	<body>
+		<header class="top-bar">
+			<h2>
+				Calculator
+			</h2>
+		</header>
+
+		<aside id="table-container" >
+			<table>
+				<!-- Numpad-->
+				<tr>
+					<table id="numpad" class="numpad">
+						<tr>
+							<td><button onclick="addToInput('7')">7</button></td>
+							<td><button onclick="addToInput('8')">8</button></td>
+							<td><button onclick="addToInput('9')">9</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('4')">4</button></td>
+							<td><button onclick="addToInput('5')">5</button></td>
+							<td><button onclick="addToInput('6')">6</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('1')">1</button></td>
+							<td><button onclick="addToInput('2')">2</button></td>
+							<td><button onclick="addToInput('3')">3</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('.')">.</button></td>
+							<td><button onclick="addToInput('0')">0</button></td>
+							<td><button onclick="evalinput()">=</button></td>
+						</tr>
+					</table>
+
+					<!-- Basic Operations-->
+					<table class="basic-operations">
+						<tr>
+							<td><button onclick="del();">DEL</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('/')">/</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('*')">x</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('-')">-</button></td>
+						</tr>
+						<tr>
+							<td><button onclick="addToInput('+')">+</button></td>
+						</tr>
+					</table>
+					<div id="power">
+						<p>Exponent Value: </p>
+						<input id="powNum" type="number" text="Exponent"></input>
+						<button onclick="power(0)">OK</button>
+					</div>
+					<!-- Extra Operations-->
+					<table>
+						<tr>
+							<table class="extra-operations">
+								<tr>
+									<td><button class="centered" onclick="clearcalc()">
+									CLEAR</button></td>
+									<td><button onclick="memclear()">MC</button></td>
+								</tr>
+							</table>
+						</tr>
+						<tr>
+							<table class="extra-operations">
+								<tr>
+									<td><button onclick="addToInput('(')">(</button></td>
+									<td><button onclick="addToInput(')')">)</button></td>
+									<td><button onclick="addToInput('%')">%</button></td>
+									<td><button onclick="memstore()">MS</button></td>
+								</tr>
+								<tr>
+									<td><button id="power-button" onclick="power(2)">x^2</button></td>
+									<td><button onclick="exponentDisplay()">y^n</button></td>
+									<td><button onclick="power(.5)">√</button></td>
+									<td><button onclick="memrecall()">MR</button></td>
+								</tr>
+								<tr>
+									<td><button>sin</button></td>
+									<td><button>cos</button></td>
+									<td><button>tan</button></td>
+
+									<td><button onclick="memplus()">M+</button></td>
+								</tr>
+							</table>
+					</table>
+				</tr>
+			</table>
+		</aside>
+
+		<section>
+			<!-- THE RESULT -->
+			<header>
+				<p id="input">
+
+				</p>
+			</header>
+			<header>
+				<p id="result">
+
+				</p>
+			</header>			
+			<!-- HISTORY -->
+			<article>
+				<h6>Memory</h6>
+				<p id="memory"></p>
+				<h4>HISTORY</h4>
+				<p id="history">
+					
+				</p>
+			</article>
+		</section>
+		
+	</body>
+</html>
