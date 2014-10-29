@@ -111,7 +111,7 @@ function sin_x(inputParam){
 	if(inputParam == 0){
 		inputParam = document.getElementById('sinNum').value;
 		document.getElementById('sinNum').value = "";
-		document.getElementById('sinNum').style.display = "none";
+		document.getElementById('Sin').style.display = "none";
 	}
 	if(input[inputCount - 1] == ')'){
 
@@ -135,7 +135,7 @@ function cos_x(inputParam){
 	if(inputParam == 0){
 		inputParam = document.getElementById('cosNum').value;
 		document.getElementById('cosNum').value = "";
-		document.getElementById('cosNum').style.display = "none";
+		document.getElementById('Cos').style.display = "none";
 	}
 	if(input[inputCount - 1] == ')'){
 
@@ -158,7 +158,7 @@ function tan_x(inputParam){
 	if(inputParam == 0){
 		inputParam = document.getElementById('tanNum').value;
 		document.getElementById('tanNum').value = "";
-		document.getElementById('tanNum').style.display = "none";
+		document.getElementById('Tan').style.display = "none";
 	}
 	if(input[inputCount - 1] == ')'){
 
