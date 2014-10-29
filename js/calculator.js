@@ -42,7 +42,7 @@ function divide() {
 function evalinput() {
 	var tmp = input.join('');
 	document.getElementById('result').innerHTML = ' = ' + eval(tmp);
-	var hist = tmp+document.getElementById('result').innerHTML+"<button OnClick=\"addToInput("+document.getElementById('input').innerHTML+")\">INPUT</button><br>";
+	var hist = tmp+document.getElementById('result').innerHTML+"<button OnClick=\"addToInput("+tmp+")\">INPUT</button><br>";
 	hist += document.getElementById('history').innerHTML;
 	document.getElementById('history').innerHTML=hist;
 }
