@@ -33,3 +33,7 @@ After you enter your number (and it must be a number, not an expression)
 hit ok and you will see the trig function with your input appear in the equation. 
 once you hit '=' the trig functions will be evaluated and the result 
 will be in radians. Degrees is not an option on our calcualtor. 
+
+Other:
+In case it was of any confusion, the "%" on the calculator is the modulo/remainder
+operator, not a percentage calculator.
