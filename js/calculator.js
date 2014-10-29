@@ -11,6 +11,7 @@ Array.prototype.contains = function ( tmp ) {
 }
 
 function addToInput(val){
+	// if operator, give it unique slot in array, else, add digit to running number in current slot
 	if(operators.contains(val)){
 		inputCount++;
 		input[inputCount] = val;
@@ -24,6 +25,7 @@ function addToInput(val){
 			input[inputCount] = val;
 		}
 	}
+	// add number or operator to array
 	document.getElementById('input').innerHTML += val;
 }
 
@@ -34,12 +36,14 @@ function del() {
 		inputCount--;
 	}
 	document.getElementById('input').innerHTML=input.join('');
-
 }
 
 function evalinput() {
+	// create string to evaluate from input array
 	var tmp = input.join('');
+	// evaluate string and set as result on the calculator
 	document.getElementById('result').innerHTML = ' = ' + eval(tmp);
+	//add to history and increase history count
 	var hist = tmp+document.getElementById('result').innerHTML+"<button OnClick=\"addToInput("+tmp+")\">INPUT</button><br>";
 	hist += document.getElementById('history').innerHTML;
 	histcounter++;
@@ -89,28 +93,30 @@ function clearcalc() {
 	document.getElementById('input').innerHTML="";
 	document.getElementById('result').innerHTML="";
 	document.getElementById('power').style.display = "none";
+	document.getElementById('Sin').style.display = "none";
+	document.getElementById('Cos').style.display = "none";
+	document.getElementById('Tan').style.display = "none";
 	input.length = 0;
 	inputCount = 0;
 }
 
 function exponentDisplay(){
+	// make exponent box visible
 	document.getElementById('power').style.display = "block";
 }
 
 function power(exponent){
-	var operators = ['+', '-', '*', '/'], tmp = [], tmpNum;
+	var tmpNum;
+	// if exponent is 0, it has not been set yet, get it from input
 	if(exponent == 0){
 		exponent = document.getElementById('powNum').value;
 		document.getElementById('powNum').value = "";
 		document.getElementById('power').style.display = "none";
 	}
-	if(input[inputCount - 1] == ')'){
-
-	}
-	else{
-		tmpNum = parseInt(input[inputCount]);
-		tmpNum = Math.pow(tmpNum, exponent);
-	}
+	// get the number to be powered(previous button(s) pressed)
+	tmpNum = parseInt(input[inputCount]);
+	// power number to given exponent and set as new answer in input
+	tmpNum = Math.pow(tmpNum, exponent);
 	document.getElementById('input').innerHTML += "^" + exponent;
 	input[inputCount] = tmpNum;
 }
