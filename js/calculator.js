@@ -102,72 +102,69 @@ function power(exponent){
 	input[inputCount] = tmpNum;
 }
 
+//this function helps create the pop-up input boxes for Sin button
 function sinDisplay(){
 	document.getElementById('Sin').style.display = "block";
 }
 
+//This is the actual Sin implementation
 function sin_x(inputParam){
 	var tempNum;
-	if(inputParam == 0){
+	if(inputParam == 0){ //input is always 0 at beginning
+	    //the below lines get the users input, then reset the input box
 		inputParam = document.getElementById('sinNum').value;
 		document.getElementById('sinNum').value = "";
 		document.getElementById('Sin').style.display = "none";
 	}
-	if(input[inputCount - 1] == ')'){
-
-	}
-	else{
-	    inputParam = parseInt(inputParam); 
-	    tempNum = Math.sin(inputParam);
-	    //CONVERT TO DEGREES HERE
-	}
-	document.getElementById('input').innerHTML += "sin(" + inputParam + ")";
-	input[inputCount] = tempNum;
+    //actual sin calculation, first get number, then apply sin
+    inputParam = parseInt(inputParam); 
+    tempNum = Math.sin(inputParam);
+    
+    //finally put sin(input) into equation and add the result to the input
+    document.getElementById('input').innerHTML += "sin(" + inputParam + ")";
+    input[inputCount] = tempNum;
 }
 
-
+//this function helps create the pop-up input boxes for Cos button
 function cosDisplay(){
 	document.getElementById('Cos').style.display = "block";
 }
 
 function cos_x(inputParam){
 	var tempNum;
-	if(inputParam == 0){
+	if(inputParam == 0){//input is always 0 at beginning
+	    //the below lines get the users input, then reset the input box
 		inputParam = document.getElementById('cosNum').value;
 		document.getElementById('cosNum').value = "";
 		document.getElementById('Cos').style.display = "none";
 	}
-	if(input[inputCount - 1] == ')'){
+    //actual cos  calculation, first get number, then apply cos
+    inputParam = parseInt(inputParam); 
+    tempNum = Math.cos(inputParam);
+    
+    //finally put cos(input) into equation and add the result to the input
+    document.getElementById('input').innerHTML += "cos(" + inputParam + ")";
+    input[inputCount] = tempNum;
 
-	}
-	else{
-	    inputParam = parseInt(inputParam); 
-	    tempNum = Math.cos(inputParam);
-	    //CONVERT TO DEGREES HERE
-	}
-	document.getElementById('input').innerHTML += "cos(" + inputParam + ")";
-	input[inputCount] = tempNum;
 }
-
+//this function helps create the pop-up input boxes for Tan button
 function tanDisplay(){
 	document.getElementById('Tan').style.display = "block";
 }
 
 function tan_x(inputParam){
 	var tempNum;
-	if(inputParam == 0){
+	if(inputParam == 0){//input is always 0 at beginning
+	    //the below lines get the users input, then reset the input box
 		inputParam = document.getElementById('tanNum').value;
 		document.getElementById('tanNum').value = "";
 		document.getElementById('Tan').style.display = "none";
 	}
-	if(input[inputCount - 1] == ')'){
+    //actual tan  calculation, first get number, then apply tan
+    inputParam = parseInt(inputParam); 
+    tempNum = Math.tan(inputParam);
 
-	}
-	else{
-	    inputParam = parseInt(inputParam); 
-	    tempNum = Math.tan(inputParam);
-	    //CONVERT TO DEGREES HERE
-	}
-	document.getElementById('input').innerHTML += "tan(" + inputParam + ")";
-	input[inputCount] = tempNum;
+    //finally put tan(input) into equation and add the result to the input
+    document.getElementById('input').innerHTML += "tan(" + inputParam + ")";
+    input[inputCount] = tempNum;
 }
