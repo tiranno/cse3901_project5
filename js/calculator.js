@@ -1,4 +1,6 @@
 var inputCount = 0;
+var histcounter = 0;
+var histlast=0;
 var operators = ['+', '-', '*', '/', '(', ')'], input = [];
 
 Array.prototype.contains = function ( tmp ) {
@@ -25,18 +27,12 @@ function addToInput(val){
 	document.getElementById('input').innerHTML += val;
 }
 
+// Deletes last operator or value. Examples: Input: 5*3456 Del -> Input: 5* , Input 5* Del -> Input: 5
 function del() {
-	var temp=document.getElementById('input').innerHTML;
-	temp=temp.substring(0,temp.length-1);
-	document.getElementById('input').innerHTML=temp;
 	input[inputCount]='';
 	inputCount--;
-}
+	document.getElementById('input').innerHTML=input.join('');
 
-function divide() {
-	var temp=document.getElementById('input').innerHTML;
-	temp=temp;
-	document.getElementById('input').innerHTML=temp;
 }
 
 function evalinput() {
@@ -44,17 +40,25 @@ function evalinput() {
 	document.getElementById('result').innerHTML = ' = ' + eval(tmp);
 	var hist = tmp+document.getElementById('result').innerHTML+"<button OnClick=\"addToInput("+tmp+")\">INPUT</button><br>";
 	hist += document.getElementById('history').innerHTML;
+	histcounter++;
+	if (histcounter>6){
+		histlast= hist.lastIndexOf('<br>');
+		hist=hist.substring(0,histlast);
+	}
 	document.getElementById('history').innerHTML=hist;
 }
 
+//clears memory
 function memclear() {
 	document.getElementById('memory').innerHTML="clear";
 }
 
+//stores result value as memory
 function memstore() {
 	document.getElementById('memory').innerHTML = document.getElementById('result').innerHTML.substring(3,document.getElementById('result').innerHTML.length);
 }
 
+//inputs memory value into input
 function memrecall() {
 	if(input[inputCount] != null){
 		input[inputCount] += document.getElementById('memory').innerHTML;
@@ -65,13 +69,20 @@ function memrecall() {
 	document.getElementById('input').innerHTML+=document.getElementById('memory').innerHTML;
 }
 
+//adds result value to memory value
 function memplus() {
 	document.getElementById('memory').innerHTML=eval(document.getElementById('result').innerHTML.substring(3,document.getElementById('result').innerHTML.length)+"+"+document.getElementById('memory').innerHTML);
 }
 
+//clears input and result but does not clear memory or history
 function clearcalc() {
 	var hist="CLEAR<br>";
 	hist += document.getElementById('history').innerHTML;
+	histcounter++;
+	if (histcounter>6){
+		histlast= hist.lastIndexOf('<br>');
+		hist=hist.substring(0,histlast);
+	}
 	document.getElementById('history').innerHTML=hist;
 	document.getElementById('input').innerHTML="";
 	document.getElementById('result').innerHTML="";
