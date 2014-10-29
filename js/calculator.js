@@ -30,7 +30,9 @@ function addToInput(val){
 // Deletes last operator or value. Examples: Input: 5*3456 Del -> Input: 5* , Input 5* Del -> Input: 5
 function del() {
 	input[inputCount]='';
-	inputCount--;
+	if(inputCount>0){
+		inputCount--;
+	}
 	document.getElementById('input').innerHTML=input.join('');
 
 }
