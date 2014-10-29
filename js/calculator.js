@@ -52,7 +52,7 @@ function memclear() {
 }
 
 function memstore() {
-	document.getElementById('memory').innerHTML = document.getElementById('result').innerHTML;
+	document.getElementById('memory').innerHTML = document.getElementById('result').innerHTML.substring(3,document.getElementById('result').innerHTML.length);
 }
 
 function memrecall() {
@@ -66,7 +66,7 @@ function memrecall() {
 }
 
 function memplus() {
-	document.getElementById('memory').innerHTML=eval(document.getElementById('result').innerHTML+"+"+document.getElementById('memory').innerHTML);
+	document.getElementById('memory').innerHTML=eval(document.getElementById('result').innerHTML.substring(3,document.getElementById('result').innerHTML.length)+"+"+document.getElementById('memory').innerHTML);
 }
 
 function clearcalc() {
