@@ -146,3 +146,26 @@
   z-index: 999;
   margin-bottom: 20px;
 }
+
+#Sin{
+  margin-left: 20px;
+  height: 40px;
+  display: none;
+  z-index: 999;
+  margin-bottom: 20px;
+}
+
+#Cos{
+  margin-left: 20px;
+  height: 40px;
+  display: none;
+  z-index: 999;
+  margin-bottom: 20px;
+}
+#Tan{
+  margin-left: 20px;
+  height: 40px;
+  display: none;
+  z-index: 999;
+  margin-bottom: 20px;
+}

@@ -65,6 +65,24 @@
 						<button onclick="power(0)">OK</button>
 					</div>
 
+					<div id="Sin">
+						<p>Sin Input: </p>
+						<input id="sinNum" type="number" text="SinInput"></input>
+						<button onclick="sin_x(0)">OK</button>
+					</div>					
+
+					<div id="Cos">
+						<p>Cos Input: </p>
+						<input id="cosNum" type="number" text="CosInput"></input>
+						<button onclick="cos_x(0)">OK</button>
+					</div>					
+
+					<div id="Tan">
+						<p>Tan Input: </p>
+						<input id="tanNum" type="number" text="tanInput"></input>
+						<button onclick="tan_x(0)">OK</button>
+					</div>	
+
 					<!-- Extra Operations-->
 					<table>
 						<tr>
@@ -91,9 +109,10 @@
 									<td><button onclick="memrecall()">MR</button></td>
 								</tr>
 								<tr>
-									<td><button>sin</button></td>
-									<td><button>cos</button></td>
-									<td><button>tan</button></td>
+									<td><button onclick="sinDisplay()">sin</button></td>
+									<td><button onclick="cosDisplay()">cos</button></td>
+									<td><button onclick="tanDisplay()">tan</button></td>
+
 
 									<td><button onclick="memplus()">M+</button></td>
 								</tr>

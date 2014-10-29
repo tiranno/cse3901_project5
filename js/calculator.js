@@ -102,5 +102,72 @@ function power(exponent){
 	input[inputCount] = tmpNum;
 }
 
+function sinDisplay(){
+	document.getElementById('Sin').style.display = "block";
+}
+
+function sin_x(inputParam){
+	var tempNum;
+	if(inputParam == 0){
+		inputParam = document.getElementById('sinNum').value;
+		document.getElementById('sinNum').value = "";
+		document.getElementById('sinNum').style.display = "none";
+	}
+	if(input[inputCount - 1] == ')'){
+
+	}
+	else{
+	    inputParam = parseInt(inputParam); 
+	    tempNum = Math.sin(inputParam);
+	    //CONVERT TO DEGREES HERE
+	}
+	document.getElementById('input').innerHTML += "sin(" + inputParam + ")";
+	input[inputCount] = tempNum;
+}
 
 
+function cosDisplay(){
+	document.getElementById('Cos').style.display = "block";
+}
+
+function cos_x(inputParam){
+	var tempNum;
+	if(inputParam == 0){
+		inputParam = document.getElementById('cosNum').value;
+		document.getElementById('cosNum').value = "";
+		document.getElementById('cosNum').style.display = "none";
+	}
+	if(input[inputCount - 1] == ')'){
+
+	}
+	else{
+	    inputParam = parseInt(inputParam); 
+	    tempNum = Math.cos(inputParam);
+	    //CONVERT TO DEGREES HERE
+	}
+	document.getElementById('input').innerHTML += "cos(" + inputParam + ")";
+	input[inputCount] = tempNum;
+}
+
+function tanDisplay(){
+	document.getElementById('Tan').style.display = "block";
+}
+
+function tan_x(inputParam){
+	var tempNum;
+	if(inputParam == 0){
+		inputParam = document.getElementById('tanNum').value;
+		document.getElementById('tanNum').value = "";
+		document.getElementById('tanNum').style.display = "none";
+	}
+	if(input[inputCount - 1] == ')'){
+
+	}
+	else{
+	    inputParam = parseInt(inputParam); 
+	    tempNum = Math.tan(inputParam);
+	    //CONVERT TO DEGREES HERE
+	}
+	document.getElementById('input').innerHTML += "tan(" + inputParam + ")";
+	input[inputCount] = tempNum;
+}
