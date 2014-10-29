@@ -1,4 +1,5 @@
 var inputCount = 0;
+var counter=0;
 var operators = ['+', '-', '*', '/', '(', ')'], input = [];
 
 Array.prototype.contains = function ( tmp ) {
@@ -40,11 +41,14 @@ function divide() {
 function evalinput() {
 	var tmp = input.join('');
 	document.getElementById('result').innerHTML = eval(tmp);
-
+	//document.getElementById('history').innerHTML = tmp;
+	var hist = "<div id=\"history"+counter+"\">"+tmp+'='+document.getElementById('result').innerHTML+"<button OnClick=\"addToInput("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
+	hist += document.getElementById('history').innerHTML;
+	document.getElementById('history').innerHTML=hist;
 	// var temp=document.getElementById('input').innerHTML;
 	// document.getElementById('input').innerHTML=eval(document.getElementById('input').innerHTML);
 	// document.getElementById('result').innerHTML=temp+'='+document.getElementById('input').innerHTML;
-	// document.getElementById('history').innerHTML+="<div id=\"history"+counter+"\">"+temp+'='+document.getElementById('input').innerHTML+"<button OnClick=\"input("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
+	// document.getElementById('history').innerHTML+="<div id=\"history"+counter+"\">"+tmp+'='+document.getElementById('input').innerHTML+"<button OnClick=\"addToInput("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
 	// counter+=1;
 }
 
@@ -62,8 +66,11 @@ function memrecall() {
 }
 
 function clearcalc() {
-	document.getElementById('history').innerHTML += input.join('');
-	document.getElementById('history').innerHTML += '<br>';
+	var hist = "<div id=\"history"+counter+"\">"+tmp+'='+document.getElementById('input').innerHTML+"<button OnClick=\"addToInput("+document.getElementById('input').innerHTML+")\">INPUT</button>" + "</div>";
+	hist += document.getElementById('history').innerHTML;
+	document.getElementById('history').innerHTML=hist;
+	//document.getElementById('history').innerHTML += input.join('');
+	//document.getElementById('history').innerHTML += '<br>';
 	document.getElementById('input').innerHTML="";
 	document.getElementById('result').innerHTML="";
 	document.getElementById('power').style.display = "none";
