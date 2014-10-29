@@ -33,3 +33,12 @@ After you enter your number (and it must be a number, not an expression)
 hit ok and you will see the trig function with your input appear in the equation. 
 once you hit '=' the trig functions will be evaluated and the result 
 will be in radians. Degrees is not an option on our calcualtor. 
+
+Memory Functions:
+
+MC = Memory Clear
+MS = Memory Store (store value of result in memory)
+MR = Memory Recall (input memory value into input)
+M+ = Memory Plus (add result value to memory value and keep in memory)
+
+% is Modulus Operator not Percentage
